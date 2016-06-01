@@ -11,7 +11,3 @@ Very basic tile map editor.
 6. The currently selected tile is indicated by an 'X' mark above it.
 7. Click on any tile in the scene view to set it as your currently selected tile.
 8. Use 'X' to undo.
-
-# Know Issues:
-
-It breaks if you select any game object in the scene view which doesn't have a sprite renderer.
