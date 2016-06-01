@@ -125,7 +125,7 @@ public class MapEditor : EditorWindow
 
 		if(selectedPrefab!=null)
 		{
-			if(selectedGameObject!=null)
+			if(selectedGameObject!=null && selectedGameObject.GetComponent<SpriteRenderer>())
 			{
 				float selectedGameObjectWidth = selectedGameObject.GetComponent<SpriteRenderer>().bounds.size.x;
 				float selectedGameObjectHeight = selectedGameObject.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -170,7 +170,9 @@ public class MapEditor : EditorWindow
     {
         GameObject go = (GameObject)Instantiate(selectedPrefab,new Vector3(_spawnPosition.x, _spawnPosition.y, 0), selectedPrefab.transform.rotation);
         Selection.activeObject = go;
-        go.name = selectedPrefab.name;
+
+		go.name = selectedPrefab.name;
+        
         spawnedGO.Add(go);
         if(spawnedGO.Count>49)
         {
